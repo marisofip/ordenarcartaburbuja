@@ -3,9 +3,15 @@
 body {
   background: green;
 }
+span {
+  font-size: 20px;
+}
+
 #numerocartas {
-  width: 20px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  border-color: black;
 }
 
 #todaslascartas,
@@ -29,15 +35,13 @@ body {
 }
 .card-numero {
   position: relative;
-  top: 35%;
   text-align: center;
   font-size: 35px;
 }
 
 .picadown {
-  position: relative;
   float: right;
-  top: 75%;
-  padding-right: 10px;
+  position: reative;
+  padding-left: 70px;
   font-size: 35px;
 }
