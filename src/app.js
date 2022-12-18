@@ -2,10 +2,10 @@
 import "bootstrap";
 import "./style.css";
 
-function soloNumeros(e) {
+/*function soloNumeros(e) {
   let key = e.keyCode || e.which,
-    tecla = String.fromCharCode(key).toLowerCase(),
-    numeros = "1234567",
+    tecla = String.fromCharCode(key),
+    numeros = "123456",
     especiales = [],
     tecla_especial = false;
   for (let i in especiales) {
@@ -18,7 +18,7 @@ function soloNumeros(e) {
   if (numeros.indexOf(tecla) == -1 && !tecla_especial) {
     return false;
   }
-}
+}*/
 
 let valorinput;
 let contenidoDeCartas;
@@ -147,14 +147,17 @@ botonDraw.addEventListener("click", function() {
 function bubbleSortCartas(cartas) {
   let arr = Array.from(cartas);
   let contenedorSort = document.getElementById("todaslascartasordenadas");
+
   let stop = arr.length - 1;
   let nombreContenedor;
   let cartaSort;
-
+  let paso = 0;
   while (stop >= 0) {
     let index = 0;
+
     while (index < stop) {
       if (arr[index].valor > arr[index + 1].valor) {
+        // alert(paso);
         let aux = arr[index];
         arr[index] = arr[index + 1];
         arr[index + 1] = aux;
@@ -162,12 +165,15 @@ function bubbleSortCartas(cartas) {
         nombreContenedor = "paso-" + index + "-" + stop;
         cartaSort = document.createElement("div");
         cartaSort.id = nombreContenedor;
+        cartaSort.innerHTML = "<h3>" + paso + "</h3>";
         contenedorSort.appendChild(cartaSort);
         dibujaCartas(arr, nombreContenedor);
+        /*pasoSort = document.createElement("h3");
+        pasoSort.innerHTML = paso; esto no funcionaba asi*/
+        paso++;
       }
       index++;
     }
-
     stop--;
   }
 }
